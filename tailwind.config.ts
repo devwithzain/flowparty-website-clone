@@ -9,9 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        heroColor: "#5546FF",
+        greenColor: "#B3EB16",
       },
+      fontFamily: {
+        helveticaNeue: ['Helvetica Neue', 'sans-serif'],
+        bodoniseventytwo: ['bodoniseventytwo', 'sans-serif'],
+        humaneMedium: ['humaneMedium', 'sans-serif']
+      }
     },
   },
   plugins: [],
