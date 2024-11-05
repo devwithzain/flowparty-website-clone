@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         heroColor: "#5546FF",
         greenColor: "#B3EB16",
+        eventBgColor: "#1C1C1C",
       },
       fontFamily: {
         helveticaNeue: ['Helvetica Neue', 'sans-serif'],

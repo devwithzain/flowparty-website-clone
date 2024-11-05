@@ -4,7 +4,6 @@ import { useState } from "react";
 import { menuDrop } from "@/public";
 import TextHover from "./text-hover";
 import { motion } from "framer-motion";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { navItemss, socialItem } from "@/constants";
 
 export default function Menu() {
@@ -52,10 +51,26 @@ export default function Menu() {
 					className="w-full h-full object-cover"
 				/>
 				<div className="absolute left-1/2 bottom-5 -translate-x-1/2">
-					<RxHamburgerMenu
-						size={30}
-						className="cursor-pointer"
-					/>
+					<button
+						type="button"
+						onClick={() => setHidden(!hidden)}
+						className="cursor-pointer">
+						<div
+							className={`w-[28px] h-[2px] transition ease-in duration-150  bg-black/50 ${
+								!hidden ? "rotate-45 mb-0  translate-y-[1px]" : "rotate-0 mb-1"
+							} `}
+						/>
+						<div
+							className={`w-[28px] h-[2px] transition ease-in duration-150 bg-black/50 ${
+								!hidden ? "hidden mb-0" : "mb-1"
+							} `}
+						/>
+						<div
+							className={`w-[28px] h-[2px] transition ease-in duration-150 bg-black/50  ${
+								!hidden ? "-rotate-45 mb-0" : "rotate-0"
+							}`}
+						/>
+					</button>
 				</div>
 			</div>
 		</motion.div>

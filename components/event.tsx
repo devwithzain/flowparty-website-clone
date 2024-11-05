@@ -1,20 +1,20 @@
-import { Eye } from "@/components";
+import Eye from "./eye";
 import { motion, MotionValue, useTransform } from "framer-motion";
 
-export default function Hero({
+export default function Event({
 	scrollYProgress,
 }: {
 	scrollYProgress: MotionValue<number>;
 }) {
-	const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-	const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+	const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
+	const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 	return (
 		<motion.div
 			style={{ scale, rotate }}
-			className="w-full h-screen bg-heroColor sticky top-0 left-0 pb-[10vh] overflow-hidden">
+			className="w-full h-screen bg-eventBgColor sticky top-0 left-0 pb-[10vh]">
 			<div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
 				<h1 className="text-[45vw] uppercase leading-none tracking-[-5] font-humaneMedium text-white">
-					flow
+					event
 				</h1>
 				<div className="absolute bottom-28 -right-16">
 					<div className="relative">
@@ -51,24 +51,6 @@ export default function Hero({
 						designers
 					</span>
 				</h1>
-			</div>
-			<div className="absolute -top-20 -right-20">
-				<motion.img
-					src={"/linedraw.svg"}
-					alt="right eye"
-					width={300}
-					height={300}
-					className="w-full h-full rotate-[110deg]"
-				/>
-			</div>
-			<div className="absolute bottom-20 -left-20">
-				<motion.img
-					src={"/linedraw.svg"}
-					alt="right eye"
-					width={300}
-					height={300}
-					className="w-full h-full"
-				/>
 			</div>
 		</motion.div>
 	);
