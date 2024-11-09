@@ -1,4 +1,4 @@
-import Eye from "./eye";
+import { Slider } from "@/components";
 import { motion, MotionValue, useTransform } from "framer-motion";
 
 export default function Event({
@@ -11,47 +11,36 @@ export default function Event({
 	return (
 		<motion.div
 			style={{ scale, rotate }}
-			className="w-full h-screen bg-eventBgColor sticky top-0 left-0 pb-[10vh]">
-			<div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-				<h1 className="text-[45vw] uppercase leading-none tracking-[-5] font-humaneMedium text-white">
-					event
-				</h1>
-				<div className="absolute bottom-28 -right-16">
-					<div className="relative">
-						<motion.img
-							animate={{
-								rotate: [0, 360],
-								transition: {
-									duration: 6,
-									ease: "linear",
-									repeat: Infinity,
-								},
+			className="w-full min-h-screen bg-eventBgColor sticky top-0 left-0">
+			<div className="w-full flex items-center justify-between gap-2 pt-60 px-10">
+				<span className="flex text-[200px] uppercase leading-none font-humaneMedium text-white">
+					{"events".split("").map((item: string, i: number) => (
+						<motion.p
+							initial={{ y: "100%" }}
+							whileInView={{ y: 0 }}
+							transition={{
+								delay: i * 0.08,
+								duration: 1,
+								ease: [0.4, 0, 0.2, 1],
 							}}
-							src={"/circlerotation.svg"}
-							alt="right eye"
-							width={50}
-							height={50}
-							className="w-[180px] h-[180px]"
-						/>
-						<h1 className="text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase leading-tight font-humaneMedium text-black">
-							party
-						</h1>
-					</div>
-				</div>
-			</div>
-			<Eye />
-			<div className="absolute bottom-5 text-center left-1/2 -translate-x-1/2">
-				<h1 className="text-[18px] font-helveticaNeue leading-tight text-white uppercase">
-					The Flow Party is a{" "}
-					<span className="text-[24px] font-bodoniseventytwo leading-tight lowercase">
-						safe
+							viewport={{ once: true }}
+							key={i}>
+							{item}
+						</motion.p>
+					))}
+				</span>
+				<h1 className="text-[18px] font-helveticaNeue leading-[0.9] text-white uppercase">
+					Our virtual events feature <br /> the{" "}
+					<span className="text-[24px] font-bodoniseventytwo leading-[0.9] lowercase">
+						top talent
 					</span>
-					, inclusive, and fun <br /> space for website developers and{" "}
-					<span className="text-[24px] font-bodoniseventytwo leading-tight lowercase">
-						designers
+					in the design <br /> & development{" "}
+					<span className="text-[24px] font-bodoniseventytwo leading-[0.9] lowercase">
+						space.
 					</span>
 				</h1>
 			</div>
+			<Slider />
 		</motion.div>
 	);
 }

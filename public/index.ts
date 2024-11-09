@@ -4,3 +4,6 @@ export { default as discord } from "./discord.svg";
 export { default as insta } from "./insta.svg";
 export { default as twitter } from "./twitter.svg";
 export { default as youtube } from "./yoututbe.svg";
+export { default as event2 } from "./event1.jpeg";
+export { default as event3 } from "./event2.jpeg";
+export { default as event4 } from "./event3.jpeg";
