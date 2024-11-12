@@ -51,8 +51,8 @@ export default function WhoWeAre() {
 			<div className="w-full h-screen bg-greenColor">
 				<div className="w-full flex items-center justify-between gap-5 p-10 h-full">
 					<div className="w-1/2 flex flex-col justify-between gap-5 relative h-full">
-						<div className="flex flex-col overflow-hidden">
-							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]">
+						<div className="flex flex-col">
+							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c] overflow-hidden">
 								{"What is the".split("").map((item: string, i: number) => (
 									<motion.p
 										initial={{ y: "100%" }}
@@ -69,7 +69,7 @@ export default function WhoWeAre() {
 									</motion.p>
 								))}
 							</span>
-							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]">
+							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c] overflow-hidden">
 								{"Flow party".split("").map((item: string, i: number) => (
 									<motion.p
 										initial={{ y: "100%" }}
@@ -87,7 +87,7 @@ export default function WhoWeAre() {
 								))}
 							</span>
 						</div>
-						<div className="absolute top-1/2 -left-1/4 -translate-y-1/2">
+						<div className="absolute top-1/2 -left-1/4 -translate-y-1/2 overflow-hidden">
 							<Image
 								src={whoweareline}
 								alt="whoweareimg"
@@ -172,7 +172,7 @@ export default function WhoWeAre() {
 							</motion.p>
 							<div className="w-full flex flex-col items-center justify-center">
 								<span
-									className="flex text-[220px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]"
+									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
 									ref={container3Ref}>
 									{"A Witty, and Upbeat place"
 										.split("")
@@ -183,8 +183,8 @@ export default function WhoWeAre() {
 												className="text-center"
 												whileInView={{ y: 0 }}
 												transition={{
-													delay: i * 0.06,
-													duration: 0.6,
+													delay: i * 0.03,
+													duration: 0.3,
 													ease: [0.4, 0, 0.2, 1],
 												}}
 												viewport={{ once: true }}
@@ -194,7 +194,7 @@ export default function WhoWeAre() {
 										))}
 								</span>
 								<span
-									className="flex text-[220px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]"
+									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
 									ref={container4Ref}>
 									{"for Webflow Developers"
 										.split("")
@@ -205,8 +205,8 @@ export default function WhoWeAre() {
 												className="text-center"
 												whileInView={{ y: 0 }}
 												transition={{
-													delay: i * 0.07,
-													duration: 0.7,
+													delay: i * 0.04,
+													duration: 0.4,
 													ease: [0.4, 0, 0.2, 1],
 												}}
 												viewport={{ once: true }}
@@ -216,7 +216,7 @@ export default function WhoWeAre() {
 										))}
 								</span>
 								<span
-									className="flex text-[220px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]"
+									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
 									ref={container5Ref}>
 									{"to learn, share knowledge"
 										.split("")
@@ -227,8 +227,8 @@ export default function WhoWeAre() {
 												className="text-center"
 												whileInView={{ y: 0 }}
 												transition={{
-													delay: i * 0.08,
-													duration: 0.8,
+													delay: i * 0.05,
+													duration: 0.5,
 													ease: [0.4, 0, 0.2, 1],
 												}}
 												viewport={{ once: true }}
@@ -238,7 +238,7 @@ export default function WhoWeAre() {
 										))}
 								</span>
 								<span
-									className="flex text-[220px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c]"
+									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
 									ref={container6Ref}>
 									{"and network".split("").map((item: string, i: number) => (
 										<motion.p
@@ -247,8 +247,8 @@ export default function WhoWeAre() {
 											whileInView={{ y: 0 }}
 											className="text-center"
 											transition={{
-												delay: i * 0.09,
-												duration: 0.9,
+												delay: i * 0.06,
+												duration: 0.6,
 												ease: [0.4, 0, 0.2, 1],
 											}}
 											viewport={{ once: true }}
@@ -270,7 +270,7 @@ export default function WhoWeAre() {
 							/>
 						</motion.div>
 					</div>
-					<div className="w-1/4 h-full">
+					<div className="w-1/4 h-full overflow-hidden">
 						<Image
 							src={whoweareline}
 							alt="whoweareimg"
