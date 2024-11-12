@@ -6,3 +6,4 @@ export { default as Event } from "./event";
 export { default as Eye } from "./eye";
 export { default as Slider } from "./slider";
 export { default as Sticky } from "./sticky";
+export { default as WhoWeAre } from "./who-we-are";

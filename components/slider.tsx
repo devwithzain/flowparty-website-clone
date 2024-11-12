@@ -35,7 +35,7 @@ export default function Slider() {
 						onSwiper={(swiper) => (swiperRef.current = swiper)}>
 						{eventItems.map((item) => (
 							<SwiperSlide key={item.id}>
-								<div className="swiper-slide h-[800px] cursor-pointer relative">
+								<div className="swiper-slide h-[800px] cursor-pointer relative overflow-hidden">
 									{item.id === 1 ? (
 										<video
 											src={"/event4.mp4"}
