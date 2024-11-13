@@ -2,10 +2,10 @@
 import "swiper/css";
 import Image from "next/image";
 import { useRef } from "react";
+import { Sticky } from "@/components";
 import { eventItems } from "@/constants";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Sticky from "./sticky";
 
 export default function Slider() {
 	const swiperRef = useRef<any | null>(null);

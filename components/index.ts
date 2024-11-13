@@ -7,3 +7,6 @@ export { default as Eye } from "./eye";
 export { default as Slider } from "./slider";
 export { default as Sticky } from "./sticky";
 export { default as WhoWeAre } from "./who-we-are";
+export { default as OnDemand } from "./on-demand";
+export { default as AnimatedText } from "./animated-text";
+export { default as TheTutors } from "./the-tutors";

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { emoji1, emoji2, emoji3, flowCurveText, whoweareline } from "@/public";
+import AnimatedText from "./animated-text";
 
 export default function WhoWeAre() {
 	const container1Ref = useRef(null);
@@ -52,40 +53,14 @@ export default function WhoWeAre() {
 				<div className="w-full flex items-center justify-between gap-5 p-10 h-full">
 					<div className="w-1/2 flex flex-col justify-between gap-5 relative h-full">
 						<div className="flex flex-col">
-							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c] overflow-hidden">
-								{"What is the".split("").map((item: string, i: number) => (
-									<motion.p
-										initial={{ y: "100%" }}
-										whileInView={{ y: 0 }}
-										transition={{
-											delay: i * 0.05,
-											duration: 0.5,
-											ease: [0.4, 0, 0.2, 1],
-											type: "tween",
-										}}
-										viewport={{ once: true }}
-										key={i}>
-										{item}
-									</motion.p>
-								))}
-							</span>
-							<span className="flex text-[250px] uppercase leading-[0.8] font-humaneMedium text-[#1c1c1c] overflow-hidden">
-								{"Flow party".split("").map((item: string, i: number) => (
-									<motion.p
-										initial={{ y: "100%" }}
-										whileInView={{ y: 0 }}
-										transition={{
-											delay: i * 0.06,
-											duration: 0.8,
-											ease: [0.4, 0, 0.2, 1],
-											type: "tween",
-										}}
-										viewport={{ once: true }}
-										key={i}>
-										{item}
-									</motion.p>
-								))}
-							</span>
+							<AnimatedText
+								text="What is the"
+								className="text-[250px] text-[#1c1c1c] overflow-hidden leading-[0.85]"
+							/>
+							<AnimatedText
+								text="Flow party"
+								className="text-[250px] text-[#1c1c1c] overflow-hidden leading-[0.85]"
+							/>
 						</div>
 						<div className="absolute top-1/2 -left-1/4 -translate-y-1/2 overflow-hidden">
 							<Image
@@ -166,97 +141,27 @@ export default function WhoWeAre() {
 						</motion.div>
 					</div>
 					<div className="w-1/2 h-full flex justify-center items-center relative z-50">
-						<div className="flex flex-col gap-5">
+						<div className="flex flex-col gap-14">
 							<motion.p className="text-center leading-tight tracking-tight text-[18px] uppercase font-medium font-bodoniseventytwo text-[#1c1c1c] flex items-center justify-center gap-3 flex-col">
 								WHO WE ARE
 							</motion.p>
-							<div className="w-full flex flex-col items-center justify-center">
-								<span
-									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
-									ref={container3Ref}>
-									{"A Witty, and Upbeat place"
-										.split("")
-										.map((item: string, i: number) => (
-											<motion.p
-												style={{ x: textLeft1 }}
-												initial={{ y: "100%" }}
-												className="text-center"
-												whileInView={{ y: 0 }}
-												transition={{
-													delay: i * 0.03,
-													duration: 0.3,
-													ease: [0.4, 0, 0.2, 1],
-												}}
-												viewport={{ once: true }}
-												key={i}>
-												{item}
-											</motion.p>
-										))}
-								</span>
-								<span
-									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
-									ref={container4Ref}>
-									{"for Webflow Developers"
-										.split("")
-										.map((item: string, i: number) => (
-											<motion.p
-												style={{ x: textRight2 }}
-												initial={{ y: "100%" }}
-												className="text-center"
-												whileInView={{ y: 0 }}
-												transition={{
-													delay: i * 0.04,
-													duration: 0.4,
-													ease: [0.4, 0, 0.2, 1],
-												}}
-												viewport={{ once: true }}
-												key={i}>
-												{item}
-											</motion.p>
-										))}
-								</span>
-								<span
-									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
-									ref={container5Ref}>
-									{"to learn, share knowledge"
-										.split("")
-										.map((item: string, i: number) => (
-											<motion.p
-												style={{ x: textLeft3 }}
-												initial={{ y: "100%" }}
-												className="text-center"
-												whileInView={{ y: 0 }}
-												transition={{
-													delay: i * 0.05,
-													duration: 0.5,
-													ease: [0.4, 0, 0.2, 1],
-												}}
-												viewport={{ once: true }}
-												key={i}>
-												{item}
-											</motion.p>
-										))}
-								</span>
-								<span
-									className="flex text-[220px] uppercase leading-[0.85] font-humaneMedium text-[#1c1c1c] overflow-hidden"
-									ref={container6Ref}>
-									{"and network".split("").map((item: string, i: number) => (
-										<motion.p
-											style={{ x: textRight4 }}
-											initial={{ y: "100%" }}
-											whileInView={{ y: 0 }}
-											className="text-center"
-											transition={{
-												delay: i * 0.06,
-												duration: 0.6,
-												ease: [0.4, 0, 0.2, 1],
-											}}
-											viewport={{ once: true }}
-											key={i}>
-											{item}
-										</motion.p>
-									))}
-								</span>
+							<div className="w-full flex flex-col items-center justify-center overflow-hidden">
+								<AnimatedText
+									className="text-[#1c1c1c] leading-[0.85] text-[200px] overflow-hidden"
+									text="A Witty, and Upbeat place"
+								/>
+								<AnimatedText
+									className="text-[#1c1c1c] leading-[0.85] text-[200px] overflow-hidden"
+									text="for Webflow Developers"
+								/>
+								<AnimatedText
+									className="text-[#1c1c1c] leading-[0.85] text-[200px] overflow-hidden"
+									text="to learn, share knowledge"
+								/>
+								<AnimatedText
+									className="text-[#1c1c1c] leading-[0.85] text-[200px] overflow-hidden"
+									text="and network"
+								/>
 							</div>
 						</div>
 						<motion.div

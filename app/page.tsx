@@ -2,10 +2,11 @@
 import Lenis from "lenis";
 import { useEffect, useRef } from "react";
 import { useScroll } from "framer-motion";
-import { Event, Hero, WhoWeAre } from "@/components";
+import { Event, Hero, OnDemand, TheTutors, WhoWeAre } from "@/components";
 
 export default function App() {
 	const container = useRef<HTMLDivElement | null>(null);
+	const container1 = useRef<HTMLDivElement | null>(null);
 	useEffect(() => {
 		const lenis = new Lenis();
 		function raf(time: number) {
@@ -19,6 +20,10 @@ export default function App() {
 		target: container,
 		offset: ["start start", "end end"],
 	});
+	const { scrollYProgress: scrollYProgress1 } = useScroll({
+		target: container1,
+		offset: ["start start", "end end"],
+	});
 	return (
 		<>
 			<div
@@ -28,6 +33,12 @@ export default function App() {
 				<Event scrollYProgress={scrollYProgress} />
 			</div>
 			<WhoWeAre />
+			<div
+				ref={container1}
+				className="relative">
+				<OnDemand scrollYProgress={scrollYProgress1} />
+				<TheTutors scrollYProgress={scrollYProgress1} />
+			</div>
 		</>
 	);
 }
