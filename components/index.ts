@@ -10,3 +10,6 @@ export { default as WhoWeAre } from "./who-we-are";
 export { default as OnDemand } from "./on-demand";
 export { default as AnimatedText } from "./animated-text";
 export { default as TheTutors } from "./the-tutors";
+export { default as WhatWeDo } from "./what-we-do";
+export { default as PartyTolls } from "./party-tolls";
+export { default as Footer } from "./footer";

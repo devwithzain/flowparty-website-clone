@@ -1,4 +1,4 @@
-import { discord, event2, event3, event4, insta, twitter, youtube } from "@/public";
+import { arrowUp, discord, event2, event3, event4, insta, tutor1, tutor2, tutor3, tutor4, twitter, youtube } from "@/public";
 
 export const navItemss = [
    {
@@ -76,6 +76,64 @@ export const eventItems = [
       date: "21 may 23",
       btn: "development",
       href: "/",
+   },
+];
+
+export const tutorsItems = [
+   {
+      id: 1,
+      img: tutor1,
+      title: "joseph berry",
+      color: "#5546FF",
+      btn: "experince design",
+   },
+   {
+      id: 2,
+      img: tutor2,
+      title: "diego toda de oliveira",
+      color: "#FF7BCA",
+      btn: "3d & animation",
+   },
+   {
+      id: 3,
+      img: tutor3,
+      title: "jonathan morin",
+      color: "#BFFF0A",
+      btn: "creative development",
+   },
+   {
+      id: 4,
+      img: tutor4,
+      title: "ilja van eck",
+      color: "#FFFFFF",
+      btn: "technical development",
+   },
+];
+
+export const partyItems = [
+   {
+      id: 1,
+      img: tutor1,
+      title: "Cowboy RDL Live Build w/ Joseph Berry",
+      src: arrowUp,
+   },
+   {
+      id: 2,
+      img: tutor2,
+      title: "Learning Lumos w/ timothy ricks",
+      src: arrowUp,
+   },
+   {
+      id: 3,
+      img: tutor3,
+      title: "Realistic 3D w/ Webflow + Anderson Mancini",
+      src: arrowUp,
+   },
+   {
+      id: 4,
+      img: tutor4,
+      title: "Learn PixiJS w/ Victor Work",
+      src: arrowUp,
    },
 ];
 
