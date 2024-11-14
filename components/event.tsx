@@ -19,8 +19,8 @@ export default function Event({
 							initial={{ y: "100%" }}
 							whileInView={{ y: 0 }}
 							transition={{
-								delay: i * 0.08,
-								duration: 1,
+								delay: i * 0.05,
+								duration: 0.5,
 								ease: [0.4, 0, 0.2, 1],
 							}}
 							viewport={{ once: true }}
@@ -29,13 +29,13 @@ export default function Event({
 						</motion.p>
 					))}
 				</span>
-				<h1 className="text-[18px] font-helveticaNeue leading-[0.9] text-white uppercase">
+				<h1 className="text-[22px] font-helveticaNeue leading-[0.9] text-white uppercase text-right">
 					Our virtual events feature <br /> the{" "}
-					<span className="text-[24px] font-bodoniseventytwo leading-[0.9] lowercase">
-						top talent
+					<span className="text-[32px] font-bodoniseventytwo leading-[0.9] lowercase">
+						top talent{" "}
 					</span>
 					in the design <br /> & development{" "}
-					<span className="text-[24px] font-bodoniseventytwo leading-[0.9] lowercase">
+					<span className="text-[32px] font-bodoniseventytwo leading-[0.9] lowercase">
 						space.
 					</span>
 				</h1>

@@ -1,17 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useRef } from "react";
+import { AnimatedText } from "@/components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { emoji1, emoji2, emoji3, flowCurveText, whoweareline } from "@/public";
-import AnimatedText from "./animated-text";
 
 export default function WhoWeAre() {
 	const container1Ref = useRef(null);
 	const container2Ref = useRef(null);
-	const container3Ref = useRef(null);
-	const container4Ref = useRef(null);
-	const container5Ref = useRef(null);
-	const container6Ref = useRef(null);
 
 	const { scrollYProgress: scrollYProgress1 } = useScroll({
 		target: container1Ref,
@@ -22,34 +18,14 @@ export default function WhoWeAre() {
 		target: container2Ref,
 		offset: ["start end", "end start"],
 	});
-	const { scrollYProgress: scrollYProgress3 } = useScroll({
-		target: container3Ref,
-		offset: ["start end", "end start"],
-	});
-	const { scrollYProgress: scrollYProgress4 } = useScroll({
-		target: container4Ref,
-		offset: ["start end", "end start"],
-	});
-	const { scrollYProgress: scrollYProgress5 } = useScroll({
-		target: container5Ref,
-		offset: ["start end", "end start"],
-	});
-	const { scrollYProgress: scrollYProgress6 } = useScroll({
-		target: container6Ref,
-		offset: ["start end", "end start"],
-	});
 	const cq = useTransform(scrollYProgress1, [0, 1], [0, 200]);
 	const crq = useTransform(scrollYProgress1, [0, 1], [0, 40]);
 	const mq = useTransform(scrollYProgress2, [0, 1], [0, -200]);
 	const mrq = useTransform(scrollYProgress2, [0, 1], [0, 40]);
 
-	const textLeft1 = useTransform(scrollYProgress3, [0, 1], [0, 40]);
-	const textRight2 = useTransform(scrollYProgress4, [0, 1], [0, -40]);
-	const textLeft3 = useTransform(scrollYProgress5, [0, 1], [0, 40]);
-	const textRight4 = useTransform(scrollYProgress6, [0, 1], [0, -40]);
 	return (
 		<>
-			<div className="w-full h-screen bg-greenColor">
+			<div className="w-full h-screen bg-greenColor pt-20">
 				<div className="w-full flex items-center justify-between gap-5 p-10 h-full">
 					<div className="w-1/2 flex flex-col justify-between gap-5 relative h-full">
 						<div className="flex flex-col">
@@ -82,7 +58,7 @@ export default function WhoWeAre() {
 					</div>
 					<div
 						ref={container1Ref}
-						className="w-1/2 relative h-full flex justify-end items-end">
+						className="w-1/2 relative h-full flex justify-end items-start">
 						<Image
 							src={flowCurveText}
 							alt="flowCurveTextImg"
@@ -99,7 +75,7 @@ export default function WhoWeAre() {
 								height={300}
 							/>
 						</motion.div>
-						<div className="absolute -bottom-12 left-28">
+						<div className="absolute -bottom-[8%] left-[20%]">
 							<div className="relative">
 								<motion.img
 									animate={{

@@ -5,7 +5,7 @@ import { Button, Menu } from "@/components";
 
 export default function Navbar() {
 	return (
-		<div className="fixed top-0 left-0 w-full flex justify-between items-center py-5 px-10 z-50">
+		<div className="fixed top-0 left-0 w-full flex justify-between items-center py-5 px-10 z-50 backdrop-blur-sm">
 			<div className="flex flex-col gap-2">
 				<Image
 					src={logo}

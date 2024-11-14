@@ -2,7 +2,16 @@
 import Lenis from "lenis";
 import { useEffect, useRef } from "react";
 import { useScroll } from "framer-motion";
-import { Event, Hero, OnDemand, TheTutors, WhoWeAre } from "@/components";
+import {
+	Event,
+	Footer,
+	Hero,
+	OnDemand,
+	PartyTolls,
+	TheTutors,
+	WhatWeDo,
+	WhoWeAre,
+} from "@/components";
 
 export default function App() {
 	const container = useRef<HTMLDivElement | null>(null);
@@ -39,6 +48,9 @@ export default function App() {
 				<OnDemand scrollYProgress={scrollYProgress1} />
 				<TheTutors scrollYProgress={scrollYProgress1} />
 			</div>
+			<WhatWeDo />
+			<PartyTolls />
+			<Footer />
 		</>
 	);
 }

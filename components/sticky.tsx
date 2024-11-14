@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function Sticky() {
 	const cursorSize = 100;
@@ -9,6 +9,7 @@ export default function Sticky() {
 		x: useMotionValue(0),
 		y: useMotionValue(0),
 	};
+	const [isVisible, setIsVisible] = useState(false); // New state for visibility
 
 	const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
 	const smoothMouse = {
@@ -16,17 +17,39 @@ export default function Sticky() {
 		y: useSpring(mouse.y, smoothOptions),
 	};
 
-	const manageMouseMove = (e: any) => {
+	const manageMouseMove = (e: MouseEvent) => {
 		const { clientX, clientY } = e;
 		mouse.x.set(clientX - cursorSize / 2.1);
 		mouse.y.set(clientY - cursorSize / 3.5);
 	};
+
 	useEffect(() => {
-		window.addEventListener("mousemove", manageMouseMove);
-		return () => {
+		const sliderContainers = document.querySelectorAll(".slider-container");
+
+		const handleMouseEnter = () => {
+			setIsVisible(true);
+			window.addEventListener("mousemove", manageMouseMove);
+		};
+
+		const handleMouseLeave = () => {
+			setIsVisible(false);
 			window.removeEventListener("mousemove", manageMouseMove);
 		};
-	});
+
+		sliderContainers.forEach((container) => {
+			container.addEventListener("mouseenter", handleMouseEnter);
+			container.addEventListener("mouseleave", handleMouseLeave);
+		});
+
+		return () => {
+			sliderContainers.forEach((container) => {
+				container.removeEventListener("mouseenter", handleMouseEnter);
+				container.removeEventListener("mouseleave", handleMouseLeave);
+			});
+		};
+	}, []);
+
+	if (!isVisible) return null; // Only render if visible
 
 	return (
 		<motion.div

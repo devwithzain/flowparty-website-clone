@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Slider() {
 	const swiperRef = useRef<any | null>(null);
 	return (
-		<div className="w-full flex flex-col gap-10">
+		<div className="slider-container w-full flex flex-col gap-10">
 			<div className="w-full">
 				<div className="overflow-hidden">
 					<Swiper

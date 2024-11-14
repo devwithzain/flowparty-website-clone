@@ -13,31 +13,31 @@ export default function Hero({
 			style={{ scale, rotate }}
 			className="w-full h-screen bg-heroColor sticky top-0 left-0 pb-[10vh] overflow-hidden">
 			<div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-				<h1 className="text-[45vw] uppercase leading-none tracking-[-5] font-humaneMedium text-white">
+				<h1 className="text-[45vw] uppercase leading-none tracking-[-5] font-humaneMedium text-white relative">
 					flow
-				</h1>
-				<div className="absolute bottom-28 -right-16">
-					<div className="relative">
-						<motion.img
-							animate={{
-								rotate: [0, 360],
-								transition: {
-									duration: 6,
-									ease: "linear",
-									repeat: Infinity,
-								},
-							}}
-							src={"/circlerotation.svg"}
-							alt="right eye"
-							width={50}
-							height={50}
-							className="w-[180px] h-[180px]"
-						/>
-						<h1 className="text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase leading-tight font-humaneMedium text-black">
-							party
-						</h1>
+					<div className="absolute bottom-28 -right-16">
+						<div className="relative">
+							<motion.img
+								animate={{
+									rotate: [0, 360],
+									transition: {
+										duration: 6,
+										ease: "linear",
+										repeat: Infinity,
+									},
+								}}
+								src={"/circlerotation.svg"}
+								alt="right eye"
+								width={250}
+								height={250}
+								className="w-[250px] h-[250px]"
+							/>
+							<h1 className="text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase leading-tight font-humaneMedium text-black tracking-wide">
+								party
+							</h1>
+						</div>
 					</div>
-				</div>
+				</h1>
 			</div>
 			<Eye />
 			<div className="absolute bottom-5 text-center left-1/2 -translate-x-1/2">
