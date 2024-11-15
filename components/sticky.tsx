@@ -47,7 +47,7 @@ export default function Sticky() {
 				container.removeEventListener("mouseleave", handleMouseLeave);
 			});
 		};
-	}, []);
+	}, [manageMouseMove]);
 
 	if (!isVisible) return null; // Only render if visible
 

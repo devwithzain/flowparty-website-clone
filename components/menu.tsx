@@ -61,7 +61,7 @@ export default function Menu() {
 							} `}
 						/>
 						<div
-							className={`w-[28px] h-[3px] transition ease-in duration-150 bg-black/50 ${
+							className={`w-[28px] h-[2px] transition ease-in duration-150 bg-black/50 ${
 								!hidden ? "hidden mb-0" : "mb-1"
 							} `}
 						/>

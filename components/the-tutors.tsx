@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { tutorsItems } from "@/constants";
 import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatedText, Button, Sticky } from "@/components";
 import { motion, MotionValue, useTransform } from "framer-motion";
@@ -13,7 +14,7 @@ export default function TheTutors({
 }: {
 	scrollYProgress: MotionValue<number>;
 }) {
-	const swiperRef = useRef<any | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
 	const rotate = useTransform(scrollYProgress, [0, 0.8], [8, 0]);
 	const scale = useTransform(scrollYProgress, [0, 0.8], [0.8, 1]);
 	return (

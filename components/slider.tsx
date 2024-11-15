@@ -5,10 +5,11 @@ import { useRef } from "react";
 import { Sticky } from "@/components";
 import { eventItems } from "@/constants";
 import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Slider() {
-	const swiperRef = useRef<any | null>(null);
+	const swiperRef = useRef<SwiperType | null>(null);
 	return (
 		<div className="slider-container w-full flex flex-col gap-10">
 			<div className="w-full">
