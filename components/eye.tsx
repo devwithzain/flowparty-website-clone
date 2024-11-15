@@ -4,14 +4,16 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function Eye() {
-	const emojiRef = useRef(null);
-	const wrapperRef = useRef(null);
-	const emojiFaceRef = useRef(null);
+	const emojiRef = useRef<HTMLDivElement>(null);
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const emojiFaceRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const wrapper = wrapperRef.current;
 		const emoji = emojiRef.current;
 		const emojiFace = emojiFaceRef.current;
+
+		if (!wrapper || !emoji || !emojiFace) return;
 
 		const moveEvent = (e: MouseEvent) => {
 			const wrapperRect = wrapper.getBoundingClientRect();
